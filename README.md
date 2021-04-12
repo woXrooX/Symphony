@@ -1,1 +1,1 @@
-# PHP_template
+# Template for PHP
