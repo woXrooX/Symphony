@@ -1,9 +1,13 @@
 <?php
 // Dynamic DOM Generator
 
-class HTML{
-  private static $title;
-  private static $main;
+final class HTML{
+  private static $title = "Symphony PHP";
+  private static $main = "Main";
+
+  public static function setTitle($title = "Symphony PHP"){self::$title = $title;}
+
+  public static function setMain($main = "Main"){self::$main = $main;}
 
   private static function html_start(){
     echo "
@@ -41,10 +45,7 @@ class HTML{
 
   private static function footer(){echo "<footer>Footer</footer>";}
 
-  public static function build($title, $main){
-    self::$title = $title;
-    self::$main = $main;
-
+  public static function build(){
     self::html_start();
       self::head();
       self::body_start();
