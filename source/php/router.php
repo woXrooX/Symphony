@@ -7,7 +7,7 @@ class Router{
   private static function detectURL(){
     // URL = /
     if($_SERVER['REQUEST_URI'] == "/"){
-      include_once 'pages/products.php';
+      include_once 'pages/home.php';
       return;
 
     }
@@ -19,8 +19,8 @@ class Router{
 
     }
 
-    // 404 | Back To Products
-    header("location: http://".$_SERVER['HTTP_HOST']."/products");
+    // 404 | Back To Home
+    header("location: http://".$_SERVER['HTTP_HOST']."/home");
 
   }
 
