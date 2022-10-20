@@ -1,1 +1,1 @@
-# Template for PHP
+# CMS
