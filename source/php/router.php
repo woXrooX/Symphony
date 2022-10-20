@@ -5,16 +5,16 @@ class Router{
   }
 
   private static function detectURL(){
-    // URL = /
+    // ON URL == / Go Home
     if($_SERVER['REQUEST_URI'] == "/"){
-      include_once 'pages/home.php';
+      require_once $_SERVER['DOCUMENT_ROOT'].'/pages/home.php';
       return;
 
     }
 
     // Check If File Exists For Specific URL
-    if(file_exists('php/pages'.$_SERVER['REQUEST_URI'].'.php')){
-      include_once 'pages'.$_SERVER['REQUEST_URI'].'.php';
+    if(file_exists($_SERVER['DOCUMENT_ROOT'].'/pages'.$_SERVER['REQUEST_URI'].'.php')){
+      require_once $_SERVER['DOCUMENT_ROOT'].'/pages'.$_SERVER['REQUEST_URI'].'.php';
       return;
 
     }
