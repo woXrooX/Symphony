@@ -1,6 +1,4 @@
 <?php
-// Dynamic DOM Generator
-
 final class HTML{
   private static $title = "Symphony PHP";
   private static $main = "Main";
