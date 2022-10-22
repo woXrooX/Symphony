@@ -1,18 +1,19 @@
 <?php
 final class HTML{
+  //////////////// Defaults
   private static $title = "Symphony PHP";
+  private static $header = "Header";
   private static $main = "Main";
+  private static $footer = "Footer";
 
+
+  //////////////// Setters
   public static function setTitle($title = "Symphony PHP"){self::$title = $title;}
-
+  public static function setHeader($header = "Header"){self::$header = $header;}
   public static function setMain($main = "Main"){self::$main = $main;}
+  public static function setFooter($footer = "Main"){self::$footer = $footer;}
 
-  private static function html_start(){
-    echo "
-      <!DOCTYPE html>
-      <html lang='en' dir='ltr'>
-    ";
-  }
+  private static function html_start(){echo "<!DOCTYPE html><html lang='en' dir='ltr'>";}
 
   private static function html_end(){echo "</html>";}
 
@@ -37,11 +38,11 @@ final class HTML{
 
   private static function body_end(){echo "</body>";}
 
-  private static function header(){echo "<header>Header</header>";}
+  private static function header(){echo "<header>".self::$header."</header>";}
 
   private static function main(){echo "<main>".self::$main."</main>";}
 
-  private static function footer(){echo "<footer>Footer</footer>";}
+  private static function footer(){echo "<footer>".self::$footer."</footer>";}
 
   public static function build(){
     self::html_start();
