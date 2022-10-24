@@ -1,34 +1,35 @@
 <?php
 final class HTML{
   //////////////// Defaults
-  private static $title = "Symphony PHP";
+  private static $title = null;
   private static $header = "Header";
   private static $main = "Main";
   private static $footer = "Footer";
 
 
   //////////////// Setters
-  public static function setTitle($title = "Symphony PHP"){self::$title = $title;}
+  public static function setTitle($title = null){self::$title = $title;}
   public static function setHeader($header = "Header"){self::$header = $header;}
   public static function setMain($main = "Main"){self::$main = $main;}
   public static function setFooter($footer = "Main"){self::$footer = $footer;}
 
-  private static function html_start(){echo "<!DOCTYPE html><html lang='en' dir='ltr'>";}
+  private static function html_start(){echo "<!DOCTYPE html><html lang='".Configurations::HTML()["lang"]."' dir='ltr'>";}
 
   private static function html_end(){echo "</html>";}
 
   private static function head(){
     echo "
       <head>
-        <meta charset='utf-8'>
+        <meta charset='".Configurations::HTML()["charset"]."'>
         <meta name='viewport' content='initial-scale=1.0, width=device-width'>
 
-        <link rel='stylesheet' href='/css/common.css'>
-        <link rel='stylesheet' href='/css/master.css'>
-        <link rel='stylesheet' href='/css/styles.css'>
+        <link rel='stylesheet' href='".Configurations::path()["css"]."common.css'>
+        <link rel='stylesheet' href='".Configurations::path()["css"]."master.css'>
+        <link rel='stylesheet' href='".Configurations::path()["css"]."styles.css'>
 
-        <script type='module' src='/js/main.js'></script>
-        <title>".self::$title."</title>
+        <script type='module' src='".Configurations::path()["js"]."main.js'></script>
+
+        <title>".(self::$title == null ? Configurations::HTML()["title"] : self::$title)."</title>
       </head>
     ";
 
