@@ -1,0 +1,38 @@
+# CONFIG
+# dates based on ISO 8601 example: 1995-08-02 14:55:12
+
+# Paths
+path:
+  css: "/css/"
+  css: "/js/"
+  pages: "/pages"
+
+database:
+  name: "symphony"
+  user: "symphony"
+  password: "password_symphony"
+  host: "127.0.0.1"
+  port: "33060"
+  charset: "utf8"
+  collate: "utf8_general_ci"
+
+  # charset: "UTF8MB4"              -> recommended by MySQL
+  # collate: "utf8mb4_0900_ai_ci"   -> recommended by MySQL
+
+  # utf8mb4: A UTF-8 encoding of the Unicode character set using one to four bytes per character.
+  # utf8mb3: A UTF-8 encoding of the Unicode character set using one to three bytes per character.
+  # utf8: An alias for utf8mb3.
+  # utf8 -> utf8_general_ci
+  # utf32 -> utf32_general_ci
+
+URL:
+  prefix: "http"
+  sub_domain: ""
+  domain_name: "localhost"
+  domain_extension: ""
+  port: "8080"
+
+HTML:
+  lang: "en"
+  charset: "utf-8"
+  title: "Symphony"
