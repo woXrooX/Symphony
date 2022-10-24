@@ -16,15 +16,6 @@ database:
   charset: "utf8"
   collate: "utf8_general_ci"
 
-  # charset: "UTF8MB4"              -> recommended by MySQL
-  # collate: "utf8mb4_0900_ai_ci"   -> recommended by MySQL
-
-  # utf8mb4: A UTF-8 encoding of the Unicode character set using one to four bytes per character.
-  # utf8mb3: A UTF-8 encoding of the Unicode character set using one to three bytes per character.
-  # utf8: An alias for utf8mb3.
-  # utf8 -> utf8_general_ci
-  # utf32 -> utf32_general_ci
-
 URL:
   prefix: "http"
   sub_domain: ""
