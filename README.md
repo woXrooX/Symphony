@@ -1,24 +1,24 @@
 # Symphony is a collection of tools for speeding-up website building processes
 
-<b>What's this?</b><br>
-<i>One of my old project to automate workflow of building Websites</i><br>
+**What's this?**
+*One of my old project to automate workflow of building Websites*
 
-<b>Quick Start</b>
+## Quick Start
 1. Clone the repo
-2. Start creating pages in pages folder
-
-<b>Page creation rules:</b>
+2. On terminal: ```cd``` to ```Symphony_PHP/source```
+3. On terminal: ```php -S localhost:8080 -c php.ini``` (**php.ini** for enabling **yaml** extension)
+3. Start creating pages in pages folder
 
 ## Configurations
-Location: <code>source/yaml/configurations.yaml</code>
-<b>You can modify followings:</b>
+File location: ```Symphony_PHP/source/yaml/configurations.yaml```
+**You can modify followings:**
 1. Paths
 2. Database credentials (MySQL)
 3. Detailed URL Structure
 4. HTML defaults
 
-The data above can be accessed using <code>Configurations</code> class
-Location: <code>source/php/configurations.php</code>
+The data above can be accessed using <code>Configurations</code> class.
+Location to include: ```Symphony_PHP/source/php/configurations.php```
 ```php
 <?php
 include_once 'configurations.php';
@@ -30,8 +30,8 @@ Configurations::HTML()["title"];
 
 ?>
 ```
-<b><code>Config</code> and <code>Conf</code> are alias to <code>Configurations</code></b>
-There are 4 getter. All of them return key value arrays
+**```Config``` and ```Conf``` are alias to ```Configurations```**
+There are 4 getter. All of them return key value arrays:
 1. Paths: <code>Configurations::path();</code>
 2. Database: <code>Configurations::database();</code>
 3. URL: <code>Configurations::URL();</code>
