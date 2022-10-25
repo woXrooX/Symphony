@@ -1,0 +1,6 @@
+\W
+
+DROP DATABASE IF EXISTS symphony;
+CREATE DATABASE IF NOT EXISTS symphony CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE symphony;
+SET NAMES utf8;
