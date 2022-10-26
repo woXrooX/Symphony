@@ -13,10 +13,17 @@ class Database{
 
   // Raw Execute
   public static function execute($query = "", $placeholder = []){
-    self::$stmt = self::$pdo->prepare($query);
-    $success = self::$stmt->execute($placeholder);
+    // Check If Query Is Not Empty Or Null
+    if($query == "" || $query == null) return false;
+    $success = false;
 
-    // Error Check Goes Here
+    try{
+      self::$stmt = self::$pdo->prepare($query);
+      $success = self::$stmt->execute($placeholder);
+    }catch(Exception $error){
+      echo "<hr>".$error->getMessage()."<hr>";
+      return false;
+    }
 
     return $success;
 
@@ -40,7 +47,7 @@ class Database{
   public static function rowCount(){
     // Error Check Goes Here
     return self::$stmt->rowCount();
-    
+
   }
 
 
