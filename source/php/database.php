@@ -7,6 +7,7 @@ class Database{
 
     // Set Default Fetch Type To Array
     // For Object -> FETCH_OBJ
+    // For Array -> FETCH_ASSOC
     self::$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
   }
@@ -49,6 +50,20 @@ class Database{
     return self::$stmt->rowCount();
 
   }
+
+  // Last ID
+  public static function lastID(){
+    return self::$stmt->lastInsertId();
+  }
+
+  // Clear -> Sets Null
+  public static function clear(){
+    self::$stmt = null;
+  }
+
+
+
+
 
 
   ////////// Variables
