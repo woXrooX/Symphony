@@ -56,6 +56,11 @@ class Database{
     return self::$stmt->lastInsertId();
   }
 
+  // Error Info
+  public static function errorInfo(){
+    return self::$stmt->errorInfo();
+  }
+
   // Clear -> Sets Null
   public static function clear(){
     self::$stmt = null;
