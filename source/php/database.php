@@ -26,7 +26,7 @@ class Database{
       self::$pdo->commit();
 
     }catch(Exception $error){
-      echo "<hr>".$error->getMessage()."<hr>";
+      self::$errorMessage = $error->getMessage();
       return false;
 
     }
@@ -61,9 +61,14 @@ class Database{
     return self::$lastID;
   }
 
-  // Error Info
+  // PDO Error Info
   public static function errorInfo(){
     return self::$stmt->errorInfo();
+  }
+
+  // Execute Catched Error Message
+  public static function errorMessage(){
+    return self::$stmt->errorMessage();
   }
 
   // Clear -> Sets Null
@@ -80,6 +85,7 @@ class Database{
   private static $pdo = null;
   private static $stmt = null;
   private static $lastID = null;
+  private static $errorMessage = null;
 
 
 
