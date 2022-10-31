@@ -56,7 +56,7 @@ class Database{
 
   }
 
-  // Last ID -> PDO
+  // Last ID
   public static function lastID(){
     return self::$lastID;
   }
