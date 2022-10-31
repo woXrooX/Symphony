@@ -20,10 +20,15 @@ class Database{
 
     try{
       self::$stmt = self::$pdo->prepare($query);
+      self::$pdo->beginTransaction();
       $success = self::$stmt->execute($placeholder);
+      self::$lastID = self::$pdo->lastInsertId();
+      self::$pdo->commit();
+
     }catch(Exception $error){
       echo "<hr>".$error->getMessage()."<hr>";
       return false;
+
     }
 
     return $success;
@@ -51,9 +56,9 @@ class Database{
 
   }
 
-  // Last ID
+  // Last ID -> PDO
   public static function lastID(){
-    return self::$stmt->lastInsertId();
+    return self::$lastID;
   }
 
   // Error Info
@@ -74,6 +79,7 @@ class Database{
   ////////// Variables
   private static $pdo = null;
   private static $stmt = null;
+  private static $lastID = null;
 
 
 
