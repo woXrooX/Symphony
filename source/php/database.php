@@ -26,6 +26,7 @@ class Database{
       self::$pdo->commit();
 
     }catch(Exception $error){
+      self::$pdo->rollBack();
       self::$errorMessage = $error->getMessage();
       return false;
 
