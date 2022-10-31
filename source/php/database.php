@@ -68,7 +68,7 @@ class Database{
 
   // Execute Catched Error Message
   public static function errorMessage(){
-    return self::$stmt->errorMessage();
+    return self::$errorMessage();
   }
 
   // Clear -> Sets Null
