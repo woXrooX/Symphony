@@ -1,8 +1,8 @@
 <?php
 require_once 'configurations.php';
 require_once 'database.php';
-require_once 'router.php';
 require_once 'HTML.php';
+require_once 'router.php';
 
 class Core{
   public static function start(){
