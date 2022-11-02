@@ -10,7 +10,7 @@
 3. Start creating pages in pages folder
 
 ## Configurations
-File location: ```Symphony_PHP/source/yaml/configurations.yaml```
+*File location*: ```Symphony_PHP/source/yaml/configurations.yaml```
 **You can modify followings:**
 1. Paths
 2. Database credentials (MySQL)
