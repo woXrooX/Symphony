@@ -9,7 +9,7 @@
 3. On terminal: ```php -S localhost:8080 -c php.ini``` (**php.ini** for enabling **yaml** extension)
 4. Start creating pages in ```Symphony_PHP/source/pages``` folder
 
-## Creating Simple Page
+## Creating A Simple Page
 1. All of the Classes under namespace called: **Symphony**
 2. Reserved function name: **onGET**
   - Function `onGET()` will be called when request method is **GET**
