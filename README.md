@@ -74,7 +74,7 @@ There are 4 getters. All of them return key value paired arrays:
 2. Database: <code>Configurations::database();</code>
 3. URL: <code>Configurations::URL();</code>
 4. HTML: <code>Configurations::HTML();</code>
-4. raw: <code>Configurations::raw();</code> *(Coming soon)*
+4. Raw: <code>Configurations::raw();</code> *(Coming soon)*
 
 # Database
 *Class for working with databases*
