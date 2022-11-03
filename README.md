@@ -69,7 +69,7 @@ Included in: ```Symphony_PHP/source/php/core.php```
 Configurations::HTML()["title"];
 ?>
 ```
-**```Config``` and ```Conf``` are alias to ```Configurations```**
+**```Config``` and ```Conf``` are alias to ```Configurations```**\
 There are 4 getters. All of them return key value paired arrays:
 1. Paths: <code>Configurations::path();</code>
 2. Database: <code>Configurations::database();</code>
