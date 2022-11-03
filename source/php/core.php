@@ -1,4 +1,6 @@
 <?php
+namespace Symphony;
+
 require_once 'configurations.php';
 require_once 'database.php';
 require_once 'HTML.php';
