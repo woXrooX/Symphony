@@ -1,14 +1,16 @@
 <?php
+namespace Symphony;
+
 class Database{
   ////////// Methods | APIs
   public static function connect($host, $user, $password, $databaseName){
     $dsn = "mysql:host=".$host."; dbname=".$databaseName;
-    self::$pdo = new PDO($dsn, $user, $password);
+    self::$pdo = new \PDO($dsn, $user, $password);
 
     // Set Default Fetch Type To Array
     // For Object -> FETCH_OBJ
     // For Array -> FETCH_ASSOC
-    self::$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    self::$pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
 
   }
 
@@ -58,28 +60,22 @@ class Database{
   }
 
   // Last ID
-  public static function lastID(){
-    return self::$lastID;
-  }
+  public static function lastID(){return self::$lastID;}
 
   // PDO Error Info
   public static function errorInfo(){
     return self::$stmt->errorInfo();
+
   }
 
   // Execute Catched Error Message
   public static function errorMessage(){
     return self::$errorMessage;
+
   }
 
   // Clear -> Sets Null
-  public static function clear(){
-    self::$stmt = null;
-  }
-
-
-
-
+  public static function clear(){self::$stmt = null;}
 
 
   ////////// Variables
@@ -87,8 +83,6 @@ class Database{
   private static $stmt = null;
   private static $lastID = null;
   private static $errorMessage = null;
-
-
 
 }
 
