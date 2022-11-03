@@ -1,5 +1,5 @@
 <?php
-include_once 'php/core.php';
-Core::start();
+require_once 'php/core.php';
+Symphony\Core::start();
 
 ?>
