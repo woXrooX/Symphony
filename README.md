@@ -101,4 +101,5 @@ File location: ```Symphony_PHP/source/php/database.php```
 Database::execute("SELECT * FROM table WHERE id=?", [1]); // Returns true or false depending result
 Database::fetchAll(); // Returns data for query executed above
 Database::rowCount(); // Row count for query executed above
+
 ?>
