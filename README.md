@@ -1,8 +1,6 @@
 # Symphony
-## Symphony is a collection of tools for speeding-up website building processes
-
 **What's this?**
-*One of my old project to automate workflow of building Websites*
+### Symphony is a collection of tools for speeding-up website building processes
 
 ## Quick Start
 1. Clone the repo
