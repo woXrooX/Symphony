@@ -1,5 +1,5 @@
 <?php
-// echo $var["TITLE"] ?? "Nope";
+namespace Symphony;
 
 class Configurations{
   ////////// Methods | APIs
@@ -9,7 +9,6 @@ class Configurations{
 
     // Re-assign configuration values once YAML file opened successfully
     if(self::$yaml != null) self::update();
-
 
   }
 
@@ -36,12 +35,10 @@ class Configurations{
   private static $URL;
   private static $HTML;
 
-
 }
 
 // Make Life Easier
-class_alias("Configurations", "Config");
-class_alias("Configurations", "Conf");
-
+class_alias("\Symphony\Configurations", "\Symphony\Config");
+class_alias("\Symphony\Configurations", "\Symphony\Conf");
 
 ?>
