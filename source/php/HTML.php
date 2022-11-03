@@ -1,4 +1,6 @@
 <?php
+namespace Symphony;
+
 final class HTML{
   //////////////// Defaults
   private static $title = null;
