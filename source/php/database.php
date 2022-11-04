@@ -1,7 +1,7 @@
 <?php
 namespace Symphony;
 
-class Database{
+final class Database{
   ////////// Methods | APIs
   public static function connect($host, $user, $password, $databaseName){
     $dsn = "mysql:host=".$host."; dbname=".$databaseName;

@@ -1,7 +1,7 @@
 <?php
 namespace Symphony;
 
-class Configurations{
+final class Configurations{
   ////////// Methods | APIs
   public static function init(){
     // Opening the file

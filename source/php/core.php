@@ -6,7 +6,7 @@ require_once 'database.php';
 require_once 'HTML.php';
 require_once 'router.php';
 
-class Core{
+final class Core{
   public static function start(){
     Configurations::init();
 
