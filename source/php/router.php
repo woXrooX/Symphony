@@ -22,7 +22,7 @@ final class Router{
       if(function_exists("onGET") && $_SERVER["REQUEST_METHOD"] == "GET") HTML::setMain(onGET());
 
       // On Request Method == POST
-      if(function_exists("onPOST") && $_SERVER["REQUEST_METHOD"] == "POST") require onPOST();
+      if(function_exists("onPOST") && $_SERVER["REQUEST_METHOD"] == "POST") return onPOST();
 
       return;
 
@@ -39,7 +39,7 @@ final class Router{
       if(function_exists("onGET") && $_SERVER["REQUEST_METHOD"] == "GET") HTML::setMain(onGET());
 
       // On Request Method == POST
-      if(function_exists("onPOST") && $_SERVER["REQUEST_METHOD"] == "POST") require onPOST();
+      if(function_exists("onPOST") && $_SERVER["REQUEST_METHOD"] == "POST") return onPOST();
 
       return;
 
