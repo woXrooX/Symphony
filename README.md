@@ -22,12 +22,12 @@
 // Setting title
 Symphony\HTML::setTitle("Home");
 
-function onGet(){
+function onGET(){
 
   return "GET";
 }
 
-function onPost(){
+function onPOST(){
 
   return "POST";
 }
