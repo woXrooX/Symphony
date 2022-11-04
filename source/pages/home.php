@@ -3,7 +3,7 @@ Symphony\HTML::setTitle("Home");
 
 function onGET(){
 
-  return "GET";
+  return "HOME";
 }
 
 function onPOST(){
