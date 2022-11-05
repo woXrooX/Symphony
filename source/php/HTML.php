@@ -2,18 +2,14 @@
 namespace Symphony;
 
 final class HTML{
-  //////////////// Defaults
-  private static $title = null;
-  private static $header = "Header";
-  private static $main = "Main";
-  private static $footer = "Footer";
+  ////////// Methods | APIs
+  ///// Setters
+  public static function setTitle($title){self::$title = $title;}
+  public static function setHeader($header){self::$header = $header;}
+  public static function setMain($main){self::$main = $main;}
+  public static function setFooter($footer){self::$footer = $footer;}
 
-
-  //////////////// Setters
-  public static function setTitle($title = null){self::$title = $title;}
-  public static function setHeader($header = "Header"){self::$header = $header;}
-  public static function setMain($main = "Main"){self::$main = $main;}
-  public static function setFooter($footer = "Main"){self::$footer = $footer;}
+  ///// Getters
 
   private static function html_start(){echo "<!DOCTYPE html><html lang='".Configurations::HTML()["lang"]."' dir='ltr'>";}
 
@@ -58,6 +54,13 @@ final class HTML{
     self::html_end();
 
   }
+
+
+  ////////// Variables
+  private static $title = null;
+  private static $header = "Header";
+  private static $main = "Main";
+  private static $footer = "Footer";
 
 }
 
