@@ -10,13 +10,19 @@ final class HTML{
   public static function setFooter($footer){self::$footer = $footer;}
 
   ///// Getters
+  public static function getSource(){
+    self::build();
 
-  private static function html_start(){echo "<!DOCTYPE html><html lang='".Configurations::HTML()["lang"]."' dir='ltr'>";}
+    return self::$source;
 
-  private static function html_end(){echo "</html>";}
+  }
+
+  private static function html_start(){return "<!DOCTYPE html><html lang='".Configurations::HTML()["lang"]."' dir='ltr'>";}
+
+  private static function html_end(){return "</html>";}
 
   private static function head(){
-    echo "
+    return "
       <head>
         <meta charset='".Configurations::HTML()["charset"]."'>
         <meta name='viewport' content='initial-scale=1.0, width=device-width'>
@@ -33,26 +39,26 @@ final class HTML{
 
   }
 
-  private static function body_start(){echo "<body>";}
+  private static function body_start(){return "<body>";}
 
-  private static function body_end(){echo "</body>";}
+  private static function body_end(){return "</body>";}
 
-  private static function header(){echo "<header>".self::$header."</header>";}
+  private static function header(){return "<header>".self::$header."</header>";}
 
-  private static function main(){echo "<main>".self::$main."</main>";}
+  private static function main(){return "<main>".self::$main."</main>";}
 
-  private static function footer(){echo "<footer>".self::$footer."</footer>";}
+  private static function footer(){return "<footer>".self::$footer."</footer>";}
 
-  public static function build(){
-    self::html_start();
-      self::head();
-      self::body_start();
-        self::header();
-        self::main();
-        self::footer();
-      self::body_end();
-    self::html_end();
-
+  private static function build(){
+    self::$source =
+      self::html_start().
+        self::head().
+        self::body_start().
+          self::header().
+          self::main().
+          self::footer().
+        self::body_end().
+      self::html_end();
   }
 
 
@@ -61,6 +67,7 @@ final class HTML{
   private static $header = "Header";
   private static $main = "Main";
   private static $footer = "Footer";
+  private static $source = null;
 
 }
 
