@@ -1,4 +1,7 @@
 <?php
+// Router's role is finding correct .php files in Symphony/source/pages folder
+// And sending their data to core
+
 namespace Symphony;
 
 final class Router{
@@ -23,7 +26,7 @@ final class Router{
     if(function_exists("onGET") && $_SERVER["REQUEST_METHOD"] == "GET") HTML::setMain(onGET());
 
     // On Request Method == POST
-    if(function_exists("onPOST") && $_SERVER["REQUEST_METHOD"] == "POST") return onPOST();
+    elseif(function_exists("onPOST") && $_SERVER["REQUEST_METHOD"] == "POST") Core::setResponseData(onPOST());
 
     // Output Buffering OFF + Erase Buffered Data
     ob_end_clean();
