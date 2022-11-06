@@ -7,6 +7,7 @@ require_once 'HTML.php';
 require_once 'router.php';
 
 final class Core{
+  ////////// Methods | APIs
   public static function start(){
     Configurations::init();
 
@@ -18,9 +19,32 @@ final class Core{
     );
 
     Router::start();
-    HTML::build();
+
+    self::makeResponse();
 
   }
+
+  private static function makeResponse(){
+    // Response On Request Method = GET
+    if($_SERVER["REQUEST_METHOD"] == "GET") echo HTML::getSource();
+
+    // Response On Request Method = POST
+    if($_SERVER["REQUEST_METHOD"] == "POST") echo self::$responseData;
+
+  }
+
+  ///// Setters
+  public static function setResponseData($data){
+    self::$responseData = $data ?? null;
+
+  }
+
+  ///// Getters
+
+
+
+  ////////// Variables
+  private static $responseData = null;
 
 }
 
