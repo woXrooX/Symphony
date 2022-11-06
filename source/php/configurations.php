@@ -25,8 +25,8 @@ final class Configurations{
   ///// Getters
   public static function path(){return self::$path;}
   public static function database(){return self::$database;}
-  public static function HTML(){return self::$HTML;}
   public static function URL(){return self::$URL;}
+  public static function HTML(){return self::$HTML;}
 
   ////////// Variables
   private static $yaml = null;
