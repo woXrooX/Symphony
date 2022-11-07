@@ -35,6 +35,32 @@ function onPOST(){
 ?>
 ```
 
+## Core
+*File location*: ```Symphony_PHP/source/php/core.php```\
+**APIs:**
+- DevMode
+  - By default disabled
+  - Enabling: `Core::enableDevMode();`
+  - **Note!** *Call this method in index.php to avoid unknown bugs*
+
+
+*File location*: ```Symphony_PHP/source/index.php```
+```php
+<?php
+require_once 'php/core.php';
+
+// Enabling Dev Mode
+// To Enable DevMode Uncomment The Line Below
+// Symphony\Core::enableDevMode();
+
+// Starting Symphony
+Symphony\Core::start();
+
+?>
+
+```
+
+
 ## Configurations
 *File location*: ```Symphony_PHP/source/yaml/configurations.yaml```\
 You can modify followings:
