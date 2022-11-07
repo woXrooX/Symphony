@@ -128,6 +128,7 @@ File location: ```Symphony/source/php/database.php```
 Database::execute("SELECT * FROM table WHERE id=?", [1]); // Returns true or false depending result
 Database::fetchAll(); // Returns data for query executed above
 Database::rowCount(); // Row count for query executed above
+?>
 ```
 ## HTML Class
 *Class for working with html structure of the page*\
@@ -142,5 +143,3 @@ File location: ```Symphony/source/php/HTML.php```\
   - **Note!** without extension `(.js)`
   - **Note!** without path
   - JavaScript path will be brought using `Conf::path()["js"]`
-
-?>
