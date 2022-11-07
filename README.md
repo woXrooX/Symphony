@@ -141,6 +141,6 @@ File location: ```Symphony/source/php/HTML.php```\
   - You need to pass only name of the script to be added
   - **Note!** without extension `(.js)`
   - **Note!** without path
-  - JavaScript path is defined at `Conf::path()["js"]`
+  - JavaScript path will be brought using `Conf::path()["js"]`
 
 ?>
