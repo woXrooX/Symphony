@@ -10,8 +10,12 @@ final class Router{
   }
 
   private static function detectURL(){
+    // Getting Dev Mode Status
+    // Assigning to local var prevents bugs when Core::enableDevMode() triggered from files in pages folder
+    $isDevModeEnabled = Core::isDevModeEnabled();
+
     // Output Buffering ON
-    ob_start();
+    if($isDevModeEnabled === false) ob_start();
 
     // ON URL == / Go Home
     if($_SERVER['REQUEST_URI'] == "/") require_once $_SERVER['DOCUMENT_ROOT'].'/pages/home.php';
@@ -29,7 +33,7 @@ final class Router{
     elseif(function_exists("onPOST") && $_SERVER["REQUEST_METHOD"] == "POST") Core::setResponseData(onPOST());
 
     // Output Buffering OFF + Erase Buffered Data
-    ob_end_clean();
+    if($isDevModeEnabled === false) ob_end_clean();
 
   }
 
