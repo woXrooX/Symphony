@@ -41,7 +41,7 @@ function onPOST(){
 - DevMode
   - By default disabled
   - Enabling: `Core::enableDevMode();`
-  - **Note!** *Call this method in index.php to avoid unknown bugs*
+  - **Note!** *Call this method before starting the Core and in index.php to avoid unknown bugs*
 
 
 *File location*: ```Symphony_PHP/source/index.php```
