@@ -4,9 +4,9 @@
 
 ## Quick Start
 1. Clone the repo
-2. On terminal: ```cd``` to ```Symphony_PHP/source```
+2. On terminal: ```cd``` to ```Symphony/source```
 3. On terminal: ```php -S localhost:8080 -c php.ini``` (**php.ini** for enabling **yaml** extension)
-4. Start creating pages in ```Symphony_PHP/source/pages``` folder
+4. Start creating pages in ```Symphony/source/pages``` folder
 
 ## Creating A Simple Page
 1. All of the Classes under namespace called: **Symphony**
@@ -17,7 +17,7 @@
 
 ```php
 <?php
-// Symphony_PHP/source/pages/home.php
+// Symphony/source/pages/home.php
 
 // Setting title
 Symphony\HTML::setTitle("Home");
@@ -39,7 +39,7 @@ function onPOST(){
 ```
 
 ## Core Class
-*File location*: ```Symphony_PHP/source/php/core.php```\
+*File location*: ```Symphony/source/php/core.php```\
 **Methods / APIs:**
 - DevMode
   - By default disabled
@@ -47,7 +47,7 @@ function onPOST(){
   - **Note!** *Call this method before starting the `Core` and in `index.php` to avoid unknown bugs*
 
 
-*File location*: ```Symphony_PHP/source/index.php```
+*File location*: ```Symphony/source/index.php```
 ```php
 <?php
 require_once 'php/core.php';
@@ -63,7 +63,7 @@ Symphony\Core::start();
 ```
 
 ## Configurations Class
-*File location*: ```Symphony_PHP/source/yaml/configurations.yaml```\
+*File location*: ```Symphony/source/yaml/configurations.yaml```\
 You can modify followings:
 1. Paths
   - css
@@ -89,7 +89,7 @@ You can modify followings:
   - title
 
 The data above can be accessed using <code>Configurations</code> class.
-Included in: ```Symphony_PHP/source/php/core.php```
+Included in: ```Symphony/source/php/core.php```
 ```php
 <?php
 // Returns title defined in configurations.yaml under HTML
@@ -106,7 +106,7 @@ There are 4 getters. All of them return key value paired arrays:
 
 ## Database Class
 *Class for working with databases*
-File location: ```Symphony_PHP/source/php/database.php```
+File location: ```Symphony/source/php/database.php```
 **Methods / APIs:**
 1. ```Database::execute(arg1, arg2): bool```
   - **arg1** is query to execute
@@ -122,7 +122,7 @@ File location: ```Symphony_PHP/source/php/database.php```
   - Returns row count
 5. ```Database::lastID(): int```
   - Returns Last Inserted Id
-  
+
 ```php
 <?php
 Database::execute("SELECT * FROM table WHERE id=?", [1]); // Returns true or false depending result
@@ -131,7 +131,7 @@ Database::rowCount(); // Row count for query executed above
 ```
 ## HTML Class
 *Class for working with html structure of the page*
-File location: ```Symphony_PHP/source/php/HTML.php```
+File location: ```Symphony/source/php/HTML.php```
 **Methods / APIs:**
 1. `HTML::setTitle(string:): void`
   - Sets title of the current page
