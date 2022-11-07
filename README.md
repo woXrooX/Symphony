@@ -130,7 +130,7 @@ Database::fetchAll(); // Returns data for query executed above
 Database::rowCount(); // Row count for query executed above
 ```
 ## HTML Class
-*Class for working with html structure of the page*
+*Class for working with html structure of the page*\
 File location: ```Symphony/source/php/HTML.php```
 **Methods / APIs:**
 1. `HTML::setTitle(string:): void`
