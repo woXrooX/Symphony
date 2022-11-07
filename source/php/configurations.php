@@ -27,7 +27,7 @@ final class Configurations{
   public static function database(){return self::$database;}
   public static function URL(){return self::$URL;}
   public static function HTML(){return self::$HTML;}
-  public static function RAW(){return self::$yaml;}
+  public static function raw(){return self::$yaml;}
 
   ////////// Variables
   private static $yaml = null;
