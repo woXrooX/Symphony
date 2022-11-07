@@ -2,7 +2,8 @@
 require_once 'php/core.php';
 
 // Enabling Dev Mode
-Symphony\Core::enableDevMode();
+// To Enable DevMode Uncomment The Line Below
+// Symphony\Core::enableDevMode();
 
 // Starting Symphony
 Symphony\Core::start();
