@@ -22,6 +22,7 @@ final class Core{
 
     Router::start();
 
+    // Should Be Last To Call
     self::makeResponse();
 
   }

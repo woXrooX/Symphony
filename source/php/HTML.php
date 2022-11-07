@@ -9,6 +9,11 @@ final class HTML{
   public static function setMain($main){self::$main = $main;}
   public static function setFooter($footer){self::$footer = $footer;}
 
+  public static function addJavaScript($name = "main"){
+    array_push(self::$javaScripts, $name);
+
+  }
+
   ///// Getters
   public static function getSource(){
     self::build();
@@ -17,11 +22,14 @@ final class HTML{
 
   }
 
+
+  ///// Methods
   private static function html_start(){return "<!DOCTYPE html><html lang='".Configurations::HTML()["lang"]."' dir='ltr'>";}
 
   private static function html_end(){return "</html>";}
 
   private static function head(){
+
     return "
       <head>
         <meta charset='".Configurations::HTML()["charset"]."'>
@@ -31,12 +39,22 @@ final class HTML{
         <link rel='stylesheet' href='".Configurations::path()["css"]."master.css'>
         <link rel='stylesheet' href='".Configurations::path()["css"]."styles.css'>
 
-        <script type='module' src='".Configurations::path()["js"]."main.js'></script>
+        ".self::generateJavaScriptElements()."
 
         <title>".(self::$title == null ? Configurations::HTML()["title"] : self::$title)."</title>
       </head>
     ";
 
+  }
+
+  private static function generateJavaScriptElements(){
+    $elements = "";
+    foreach(self::$javaScripts as $javaScript){
+      $elements .= "<script type='module' src='".Configurations::path()["js"].$javaScript.".js'></script>";
+
+    }
+
+    return $elements;
   }
 
   private static function body_start(){return "<body>";}
@@ -64,6 +82,7 @@ final class HTML{
 
   ////////// Variables
   private static $title = null;
+  private static $javaScripts = array();
   private static $header = "Header";
   private static $main = "Main";
   private static $footer = "Footer";
