@@ -9,6 +9,8 @@ require_once 'router.php';
 final class Core{
   ////////// Methods | APIs
   public static function start(){
+    self::settings();
+
     Configurations::init();
 
     Database::connect(
@@ -27,14 +29,7 @@ final class Core{
   public static function enableDevMode(){
     self::$isDevModeEnabled = true;
 
-  }
-
-  private static function makeResponse(){
-    // Response On Request Method = GET
-    if($_SERVER["REQUEST_METHOD"] == "GET") echo HTML::getSource();
-
-    // Response On Request Method = POST
-    if($_SERVER["REQUEST_METHOD"] == "POST") echo self::$responseData;
+    ini_set('display_errors', '1');
 
   }
 
@@ -50,6 +45,21 @@ final class Core{
 
   }
 
+  ///// Methods
+  private static function makeResponse(){
+    // Response On Request Method = GET
+    if($_SERVER["REQUEST_METHOD"] == "GET") echo HTML::getSource();
+
+    // Response On Request Method = POST
+    if($_SERVER["REQUEST_METHOD"] == "POST") echo self::$responseData;
+
+  }
+
+  private static function settings(){
+    // By Default Doesn't Show Errors
+    if(self::$isDevModeEnabled === false) ini_set('display_errors', '0');
+
+  }
 
 
   ////////// Variables
