@@ -11,9 +11,9 @@
 ## Creating A Simple Page
 1. All of the Classes under namespace called: **Symphony**
 2. Reserved function name: **onGET**
-  - Function `onGET()` will be called when request method is **GET**
+  - Function `onGET(): string` will be called when request method is **GET**
 3. Reserved function name: **onPOST**
-  - Function `onPOST()` will be called when request method is **POST**
+  - Function `onPOST(): string` will be called when request method is **POST**
 
 ```php
 <?php
@@ -21,6 +21,9 @@
 
 // Setting title
 Symphony\HTML::setTitle("Home");
+
+// Adding JavaScript
+Symphony\HTML::addJavaScript("main");
 
 function onGET(){
 
@@ -35,12 +38,12 @@ function onPOST(){
 ?>
 ```
 
-## Core
+## Core Class
 *File location*: ```Symphony_PHP/source/php/core.php```\
-**APIs:**
+**Methods / APIs:**
 - DevMode
   - By default disabled
-  - Enabling: `Core::enableDevMode();`
+  - Enabling: `Core::enableDevMode(): void`
   - **Note!** *Call this method before starting the `Core` and in `index.php` to avoid unknown bugs*
 
 
@@ -57,11 +60,9 @@ require_once 'php/core.php';
 Symphony\Core::start();
 
 ?>
-
 ```
 
-
-## Configurations
+## Configurations Class
 *File location*: ```Symphony_PHP/source/yaml/configurations.yaml```\
 You can modify followings:
 1. Paths
@@ -95,37 +96,51 @@ Included in: ```Symphony_PHP/source/php/core.php```
 Configurations::HTML()["title"];
 ?>
 ```
-**```Config``` and ```Conf``` are alias to ```Configurations```**\
+**`Config` and `Conf` are alias to `Configurations`**\
 There are 4 getters. All of them return key value paired arrays:
-1. Paths: <code>Configurations::path();</code>
-2. Database: <code>Configurations::database();</code>
-3. URL: <code>Configurations::URL();</code>
-4. HTML: <code>Configurations::HTML();</code>
-4. Raw: <code>Configurations::raw();</code>
+1. Paths: `Configurations::path(): array`
+2. Database: `Configurations::database(): array`
+3. URL: `Configurations::URL(): array`
+4. HTML: `Configurations::HTML(): array`
+4. Raw: `Configurations::raw(): array`
 
-# Database
+## Database Class
 *Class for working with databases*
 File location: ```Symphony_PHP/source/php/database.php```
-**Methods**
-1. ```Database::execute(arg1, arg2);```
+**Methods / APIs:**
+1. ```Database::execute(arg1, arg2): bool```
   - **arg1** is query to execute
   - **arg2** *(optional)* is array of placeholders for prepared statement
   - On success returns **true**, On error returns **false**
-2. ```Database::fetchAll();```
+2. ```Database::fetchAll(): array```
   - Fetches all data
-  - Return type array
-3. ```Database::fetchOne();```
+  - Returns key value paired array
+3. ```Database::fetchOne(): array```
   - Fetches one data
-  - Return type array
-4. ```Database::rowCount();```
+  - Returns key value paired array
+4. ```Database::rowCount(): int```
   - Returns row count
-5. ```Database::lastID();```
+5. ```Database::lastID(): int```
   - Returns Last Inserted Id
-
+  
 ```php
 <?php
 Database::execute("SELECT * FROM table WHERE id=?", [1]); // Returns true or false depending result
 Database::fetchAll(); // Returns data for query executed above
 Database::rowCount(); // Row count for query executed above
+```
+## HTML Class
+*Class for working with html structure of the page*
+File location: ```Symphony_PHP/source/php/HTML.php```
+**Methods / APIs:**
+1. `HTML::setTitle(string:): void`
+  - Sets title of the current page
+  - Accepts one argument (string)
+2. `HTML::addJavaScript(string:): void`
+  - Adds JavaScript to `html > head`
+  - You need to pass only name of the script to be added
+  - **Note!** without extension `(.js)`
+  - **Note!** without path
+  - JavaScript path is defined at `Conf::path()["js"]`
 
 ?>
