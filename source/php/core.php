@@ -24,6 +24,11 @@ final class Core{
 
   }
 
+  public static function enableDevMode(){
+    self::$isDevModeEnabled = true;
+
+  }
+
   private static function makeResponse(){
     // Response On Request Method = GET
     if($_SERVER["REQUEST_METHOD"] == "GET") echo HTML::getSource();
@@ -40,11 +45,16 @@ final class Core{
   }
 
   ///// Getters
+  public static function isDevModeEnabled(){
+    return self::$isDevModeEnabled;
+
+  }
 
 
 
   ////////// Variables
   private static $responseData = null;
+  private static $isDevModeEnabled = false;
 
 }
 
