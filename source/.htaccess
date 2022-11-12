@@ -1,0 +1,17 @@
+DirectoryIndex index.php
+Options -Indexes
+
+<Files *.json>
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+<Files *.yaml>
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php [NC,L,QSA]
