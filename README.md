@@ -9,7 +9,7 @@
 4. Start creating pages in ```Symphony/source/pages``` folder
 
 ## Creating A Simple Page
-1. All of the Classes under namespace called: **Symphony**
+1. All of the Classes are under namespace called: **Symphony**
 2. Reserved function name: **onGET**
   - Function `onGET(): string` will be called when request method is **GET**
 3. Reserved function name: **onPOST**
