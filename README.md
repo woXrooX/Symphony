@@ -1,6 +1,6 @@
 # Symphony
 **What's this?**
-### Symphony is a collection of tools for speeding-up website building processes in PHP
+### Symphony is a collection of tools for speeding-up website building processes using PHP
 
 ## Quick Start
 1. Clone the repo
