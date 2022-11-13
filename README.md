@@ -66,7 +66,7 @@ Symphony\Core::start();
 ```
 
 ## Configurations Class
-By default class uses `YAML` file to keep configurations
+By default class uses `YAML` file to keep configurations  
 *File location*: `Symphony/source/yaml/configurations.yaml`
 
 But you can use `JSON` as configurations file by calling `Configurations::useJSON(): void`
