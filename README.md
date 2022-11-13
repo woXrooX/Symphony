@@ -69,8 +69,8 @@ Symphony\Core::start();
 By default class uses `YAML` file to keep configurations  
 *File location*: `Symphony/source/yaml/configurations.yaml`
 
-But you can use `JSON` as configurations file by calling `Configurations::useJSON(): void`  
-**NOTE!** Call this method in `Symphony/source/index.php` before starting **Core**  
+But you can use `JSON` as configurations file by calling `Configurations::useJSON(): void`\
+**NOTE!** Call this method in `Symphony/source/index.php` before starting **Core**\
 *File location*: `Symphony/source/json/configurations.json`
 
 You can modify followings:
@@ -97,7 +97,7 @@ You can modify followings:
   - charset
   - title
 
-The data above can be accessed using <code>Configurations</code> class.
+The data above can be accessed using <code>Configurations</code> class.\
 Included in: ```Symphony/source/php/core.php```
 ```php
 <?php
@@ -115,7 +115,7 @@ There are 4 getters. All of them return key value paired arrays:
 
 ## Database Class
 *Class for working with databases*
-File location: ```Symphony/source/php/database.php```
+File location: `Symphony/source/php/database.php`\
 **Methods / APIs:**
 1. ```Database::execute(arg1, arg2): bool```
   - **arg1** is query to execute
