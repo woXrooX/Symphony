@@ -114,7 +114,7 @@ There are 4 getters. All of them return key value paired arrays:
 4. Raw: `Configurations::raw(): array`
 
 ## Database Class
-*Class for working with databases*
+*Class for working with databases*\
 File location: `Symphony/source/php/database.php`\
 **Methods / APIs:**
 1. ```Database::execute(arg1, arg2): bool```
