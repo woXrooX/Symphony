@@ -4,9 +4,9 @@
 
 ## Quick Start
 1. Clone the repo
-2. On terminal: ```cd``` to ```Symphony/source```
-3. On terminal: ```php -S localhost:8080 -c php.ini``` (**php.ini** for enabling **yaml** extension)
-4. Start creating pages in ```Symphony/source/pages``` folder
+2. On terminal: `cd` to `Symphony/source`
+3. On terminal: `php -S localhost:8080 -c php.ini` (**php.ini** for enabling **yaml** extension)
+4. Start creating pages in `Symphony/source/pages` folder
 
 ## Creating A Simple Page
 1. All of the Classes are under namespace called: **Symphony**
@@ -39,7 +39,7 @@ function onPOST(){
 ```
 
 ## Core Class
-*File location*: ```Symphony/source/php/core.php```\
+*File location*: `Symphony/source/php/core.php`\
 **Methods / APIs:**
 - DevMode
   - By default disabled
@@ -47,7 +47,7 @@ function onPOST(){
   - **Note!** *Call this method before starting the `Core` and in `index.php` to avoid unknown bugs*
 
 
-*File location*: ```Symphony/source/index.php```
+*File location*: `Symphony/source/index.php`
 ```php
 <?php
 require_once 'php/core.php';
@@ -66,7 +66,7 @@ Symphony\Core::start();
 ```
 
 ## Configurations Class
-By default class uses `YAML` file to keep configurations  
+By default class uses `YAML` file to keep configurations\
 *File location*: `Symphony/source/yaml/configurations.yaml`
 
 But you can use `JSON` as configurations file by calling `Configurations::useJSON(): void`\
