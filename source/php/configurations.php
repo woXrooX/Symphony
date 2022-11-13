@@ -27,7 +27,7 @@ final class Configurations{
 
   }
 
-  public static function useJson(){
+  public static function useJSON(){
     self::$isJsonDefault = true;
 
   }
