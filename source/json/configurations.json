@@ -1,0 +1,28 @@
+{
+  "path": {
+    "css": "/css/",
+    "js": "/js/",
+    "pages": "/pages"
+  },
+  "database": {
+    "name": "scandiweb",
+    "user": "scandiweb",
+    "password": "password_scandiweb",
+    "host": "127.0.0.1",
+    "port": "33060",
+    "charset": "utf8",
+    "collate": "utf8_general_ci"
+  },
+  "URL": {
+    "prefix": "http",
+    "sub_domain": "",
+    "domain_name": "localhost",
+    "domain_extension": "",
+    "port": "8080"
+  },
+  "HTML": {
+    "lang": "en",
+    "charset": "utf-8",
+    "title": "Scandiweb"
+  }
+}
