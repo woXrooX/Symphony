@@ -56,6 +56,9 @@ require_once 'php/core.php';
 // To Enable DevMode Uncomment The Line Below
 // Symphony\Core::enableDevMode();
 
+// Setting JSON As Default Configurations File
+// Symphony\Configurations::useJSON();
+
 // Starting Symphony
 Symphony\Core::start();
 
@@ -63,7 +66,13 @@ Symphony\Core::start();
 ```
 
 ## Configurations Class
-*File location*: ```Symphony/source/yaml/configurations.yaml```\
+By default class uses `YAML` file to keep configurations
+*File location*: `Symphony/source/yaml/configurations.yaml`
+
+But you can use `JSON` as configurations file by calling `Configurations::useJSON(): void`
+**NOTE!** Call this method in `Symphony/source/index.php` before starting **Core**
+*File location*: `Symphony/source/json/configurations.json`
+
 You can modify followings:
 1. Paths
   - css
